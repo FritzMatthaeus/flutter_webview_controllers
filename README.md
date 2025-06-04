@@ -53,7 +53,7 @@ void main() async {
 
 ### 2. Use the WebView Wrapper
 
-Create a Widget that wraps the `WebviewWrapper`. There are some customizations to be set.
+The [WebvieWrapper](./lib/src/widgets/webview_wrapper.dart) provides a Scaffold with an InAppWebView to be shown in FullScreen Mode.
 A `backgroundColor` must be provided.
 
 ```dart
@@ -64,13 +64,13 @@ class MyWebViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const WebviewWrapper(
       backgroundColor: Colors.white,
-      appBarBackgroundColor: Colors.blue,
-      systemOverlayStyle: SystemUiOverlayStyle.dark,
-      extendBodyBehindAppBar: false,
     );
   }
 }
 ```
+
+In case you want to implement the `InAppWebView` yourself, you can do this. Checkout the [WebvieWrapper](./lib/src/widgets/webview_wrapper.dart) on
+how to use the [WebvieSetup](./lib/src/webview_setup.dart) to set up your webview.
 
 ### 3. Set up JavaScript Interface
 
@@ -315,7 +315,6 @@ A complete example demonstrating all features:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_webview_controllers/flutter_webview_controllers.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -373,7 +372,6 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return const WebviewWrapper(
       backgroundColor: Colors.white,
-      systemOverlayStyle: SystemUiOverlayStyle.dark,
     );
   }
 }
