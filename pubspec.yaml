@@ -1,0 +1,23 @@
+name: flutter_webview_controllers
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.8.1
+
+# Add regular dependencies here.
+dependencies:
+  firebase_core: ^3.13.1
+  firebase_messaging: ^15.2.6
+  flutter:
+    sdk: flutter
+  flutter_inappwebview: ^6.1.5
+  flutter_phone_direct_caller: ^2.2.1
+  logger: ^2.5.0
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.24.0
+  very_good_analysis: ^8.0.0

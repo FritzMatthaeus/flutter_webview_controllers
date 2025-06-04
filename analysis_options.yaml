@@ -1,0 +1,11 @@
+# This file configures the static analysis results for your project (errors,
+# warnings, and lints).
+
+analyzer:
+  errors:
+    avoid_catches_without_on_clauses: ignore
+include: package:very_good_analysis/analysis_options.yaml
+
+linter:
+  rules:
+    - avoid_catches_without_on_clauses: false

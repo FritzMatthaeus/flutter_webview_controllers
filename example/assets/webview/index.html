@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="./customEvent.js"></script>
+    <script type="text/javascript" src="./platform_interface.js"></script>
+    <title>Debug</title>
+    <style>
+      body {
+        background: #f7f7fa;
+        font-family: "Segoe UI", Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+      h1 {
+        color: #333;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+      }
+      .button-group {
+        display: flex;
+        gap: 1.5rem;
+      }
+      button {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        background: #4f8cff;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        transition: background 0.2s, transform 0.2s;
+      }
+      button:hover {
+        background: #2563eb;
+        transform: translateY(-2px) scale(1.04);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Debug</h1>
+    <div class="button-group">
+      <button id="btn1">Button 1</button>
+      <button id="btn2">Button 2</button>
+    </div>
+  </body>
+  <script>
+    console.log("loading javascript");
+    platformInterface.getPlatform().then((platform) => {
+      console.log("Platform: " + platform);
+    });
+    platformInterface.getFirebaseToken().then((token) => {
+      console.log("Firebase Token: " + token);
+    });
+    console.log("javascript loaded");
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    btn1.addEventListener("click", () => {
+      platformInterface.openPhone("1234567890");
+    });
+
+    btn2.addEventListener("click", () => {
+      platformInterface.getFirebaseToken().then((token) => {
+        console.log("Firebase Token: " + token);
+      });
+    });
+  </script>
+</html>
