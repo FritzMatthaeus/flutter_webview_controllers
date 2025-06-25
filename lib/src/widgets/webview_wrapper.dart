@@ -32,7 +32,6 @@ class _WebviewWrapperState extends State<WebviewWrapper> {
       child: Scaffold(
         backgroundColor: widget.backgroundColor,
         extendBody: true,
-
         body: Column(
           children: [
             Expanded(
